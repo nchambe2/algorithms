@@ -24,22 +24,22 @@ OUTPUT: Return a new array with items that are found in both array_1 and array_2
 =end
 
 def diff(array_1, array_2)
-  same_value = [];
+  unique_value = [];
 
   array_1.map do |value|
       next if array_2.include? value
-          same_value << value
+          unique_value << value
   end
 
   array_2.map do |value|
       next if array_1.include? value
-          same_value << value
+          unique_value << value
   end
 
-  return same_value
+  return unique_value
 end
 
-p diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+p diff([1, 2, 3, 5], [1, 2, 3, 4, 5])
 p diff(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])
 p diff(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])
 p diff(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"])
