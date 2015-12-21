@@ -24,7 +24,9 @@ def fear_not_letter(string)
   string_array = string.split("")
   first_letter = string_array[0]
   last_letter = string_array.last
+
   (first_letter..last_letter).find_all { |letter|  letter unless string_array.include?(letter)}
+
 end
 
 p fear_not_letter("abce") #should return "d".
